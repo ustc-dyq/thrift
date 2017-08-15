@@ -1,0 +1,6 @@
+生成私钥：
+keytool -genkeypair -alias certificatekey -keyalg RSA -validity 36500 -keystore .keystore
+生成证书：
+keytool -export -alias certificatekey -keystore .keystore -rfc -file server.cer
+生成公钥：
+keytool -import -alias certificatekey -file server.cer -keystore .truststore
